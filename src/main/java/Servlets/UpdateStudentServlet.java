@@ -107,13 +107,11 @@ public class UpdateStudentServlet extends HttpServlet {
 
     //method to insert new studenter into stundenter table
     private void updateStudent (HttpServletRequest req, HttpServletResponse resp) throws IOException{
-        PrintWriter out = resp.getWriter();
+
         String fName = req.getParameter("fname");
         String lName = req.getParameter("lname");
         String ort = req.getParameter("ort");
         String intressen = req.getParameter("intressen");
-
-        boolean errorMsg = false;
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -133,12 +131,7 @@ public class UpdateStudentServlet extends HttpServlet {
 
             con.close();
         } catch (Exception e) {
-            errorMsg = true;
             System.out.println(e);
         }
-        if (errorMsg){
-            out.println("<h3 style ='text-align: center; font-style: italic; font-size: 1rem' > Kunde inte lägga till student!</h3>");
-        } else
-        { resp.sendRedirect("/updatestudenter");}
     }
 }
