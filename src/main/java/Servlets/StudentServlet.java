@@ -46,7 +46,19 @@ public class StudentServlet extends HttpServlet {
     private void showStudent(HttpServletRequest req, HttpServletResponse resp) throws IOException{
         resp.setContentType("text/HTML");
         PrintWriter out = resp.getWriter();
-        out.println(top);
+        //Change tablehead to fit the new header 
+        out.println(
+                "<head><title> stundent </title></head>"
+                + "<body style = 'background-color: #cccec9; height:100%; width: 100%; margin: 0px;'>"
+                + "<div style = 'text-align: center; background-color: #333333; height: 60px; top: 0px;'>"
+                + "<a href=\"http://localhost:9090\" " + space + "> Hem </a>"
+                + "<a href=\"kurser\" " + space + "> Kurser </a>"
+                + "<a href=\"narvaro\" "  + space + "> Närvaro </a>"
+                + "<a href= \"updatestudenter\" "  + space + "> Uppdatera Student </a>"
+                + "</div>"
+                + "<h1 style = 'text-align: center; font-style: italic; font-size: 3rem'>Studenter</h1>"
+                + "<table style = 'margin-left: auto; margin-right: auto; border: 1px solid black; background-color: #57864b;'>"
+                + "<tr><th>id</th><th>Namn</th><th>Efternamn</th><th>YHP</th><th>Kurs</th></tr>");
 
         //boolean so i can toggle message if anything goes wrong and print out what it is
         boolean errorMsg = false;
