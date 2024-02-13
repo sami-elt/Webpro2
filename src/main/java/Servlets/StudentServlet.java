@@ -46,7 +46,7 @@ public class StudentServlet extends HttpServlet {
     private void showStudent(HttpServletRequest req, HttpServletResponse resp) throws IOException{
         resp.setContentType("text/HTML");
         PrintWriter out = resp.getWriter();
-        //Change tablehead to fit the new header 
+        //Change tablehead to fit the new header
         out.println(
                 "<head><title> stundent </title></head>"
                 + "<body style = 'background-color: #cccec9; height:100%; width: 100%; margin: 0px;'>"
